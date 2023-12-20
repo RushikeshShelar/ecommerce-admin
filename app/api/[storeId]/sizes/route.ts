@@ -39,7 +39,7 @@ export async function POST(
             }
         });
 
-        return NextResponse.json(name);
+        return NextResponse.json(size);
 
     } catch (error) {
         console.log('SIZES_POST', error);
