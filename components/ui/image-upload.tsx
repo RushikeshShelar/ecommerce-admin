@@ -12,6 +12,7 @@ interface ImageUploadProps {
     onChange: (value: string) => void;
     onRemove: (value: string) => void;
     value: string[];
+    text: string;
 }
 
 const ImageUpload: React.FC<ImageUploadProps>= ({
@@ -19,6 +20,7 @@ const ImageUpload: React.FC<ImageUploadProps>= ({
     onChange,
     onRemove,
     value,
+    text,
 }) => {
 
     const [isMounted, setIsMounted] = useState(false);
@@ -68,7 +70,7 @@ const ImageUpload: React.FC<ImageUploadProps>= ({
                                 onClick={onClick}
                             >
                                 <ImagePlus className="w-4 h-4 mr-2"/>
-                                Upload an Image
+                                {text}
                             </Button>
                         )
                     }}
