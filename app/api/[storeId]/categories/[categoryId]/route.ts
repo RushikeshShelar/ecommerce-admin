@@ -2,7 +2,7 @@ import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 
 import prismadb from "@/lib/prismadb";
-import { ca } from "date-fns/locale";
+
 
 export async function GET(
     req: Request,
@@ -18,6 +18,9 @@ export async function GET(
             where: {
                 id: params.categoryId,
             },
+            include:{
+                billboard:true
+            }
         })
 
         return NextResponse.json(category);
