@@ -12,8 +12,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Admin Dashboard',
-  description: 'Admin Dashboard',
+  title: 'NextMart Admin Dashboard',
+  description: 'Admin Dashboard for NextMart Ecommerce App built with Next.js and TypeScript',
 }
 
 export default function RootLayout({
