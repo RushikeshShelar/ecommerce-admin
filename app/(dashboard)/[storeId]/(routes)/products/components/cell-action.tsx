@@ -4,7 +4,7 @@ import axios from "axios"
 import { Copy, Edit, MoreHorizontal, Trash } from "lucide-react"
 import { useParams, useRouter } from "next/navigation"
 import toast from "react-hot-toast"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import {
   DropdownMenu,
@@ -27,11 +27,21 @@ interface CellActionProps {
 export const CellAction: React.FC<CellActionProps> = ({
   data
 }) => {
+
+  const [isMounted, setIsMounted] = useState(false);
+
   const router = useRouter();
   const params = useParams();
 
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  },[]);
+
+  if (!isMounted) return null;
+
 
   const onCopy = (id: string) => {
     navigator.clipboard.writeText(id);
